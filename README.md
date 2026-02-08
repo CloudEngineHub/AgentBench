@@ -200,6 +200,14 @@ python -m src.start_task -a
 This will launch five task_workers each for `dbbench-std` and `os-std` tasks and automatically connect them
 to the controller on port 5000. **After executing this command, please allow approximately 1 minute for the task setup to complete.** If the terminal shows ".... 200 OK", you can open another terminal and follow step 4.
 
+#### Lite preset (laptops / limited RAM)
+
+If you want to start with minimal concurrency (1 worker per task), use the lite preset:
+
+```bash
+python -m src.start_task -a --config configs/start_task_lite.yaml
+```
+
 ### Step 4. Start the assigner
 
 This step is to actually start the tasks.
@@ -208,6 +216,12 @@ If everything is correctly configured so far, you can now initiate the task test
 
 ```bash
 python -m src.assigner
+```
+
+If you started the task server with the lite preset, you can also run the lite evaluation preset:
+
+```bash
+python -m src.assigner --config configs/assignments/lite.yaml
 ```
 
 ## Next Steps
