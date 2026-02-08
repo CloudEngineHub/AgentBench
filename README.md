@@ -151,6 +151,9 @@ and [Program Entrance Guide](docs/Entrance_en.md).
 
 Clone this repo and install the dependencies.
 
+> **Python version note:** AgentBench pins older scientific Python deps (e.g. `numpy~=1.23.x`).
+> Using the recommended **Python 3.9** (via conda) is the most reliable way to install dependencies.
+
 ```bash
 cd AgentBench
 conda create -n agent-bench python=3.9
